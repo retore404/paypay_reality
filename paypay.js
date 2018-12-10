@@ -14,26 +14,45 @@ function prepareCalc(){
     calc(pr, num);
 }
 
+function fuctorial(k){
+    //console.log(k)
+    let j=1;
+    for(let i=1; i<= k; i++){
+        j*=i;
+    }
+    return j;
+}
+
 function calc(pr, num){
+    pr = parseFloat(pr);
+    num = parseInt(num);
     let chart = document.getElementById('chart').getContext('2d');
-    let test = new Chart(chart, {
+    let serial = [...Array(num+1).keys()];
+    let data = []
+    for(i=0; i<serial.length; i++){
+        console.log('a')
+        win = fuctorial(num)/(fuctorial(i)*fuctorial(num-i)) * (pr**i) * (1-pr)**(num-i);
+        data.push(win);
+    }
+    console.log(data);
+    let calculation = new Chart(chart, {
         type: "bar",
         data: {
-            labels: ['1', '2', '3'],
+            labels: serial,
             datasets: [{
                 label: "probability",
-                data:[2*pr,4*pr,1*pr],
+                data:data,
                 backgroundColor: "red"
             }]
         },
         options: {
+            events: ['click'],
             scales: {
                 yAxes: [
                     {
                         ticks: {
                             beginAtZero: true,
-                            min: 0,
-                            max: 1
+                            min: 0
                         }
                     }
                 ]
