@@ -15,12 +15,11 @@ function prepareCalc(){
 }
 
 function fuctorial(k){
-    //console.log(k)
-    let j=1;
-    for(let i=1; i<= k; i++){
-        j*=i;
+    if(k!=0){
+        return k*fuctorial(k-1);
+    } else {
+        return 1;
     }
-    return j;
 }
 
 function calc(pr, num){
