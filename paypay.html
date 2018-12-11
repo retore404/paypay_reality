@@ -1,4 +1,4 @@
-<html>
+﻿<html>
 <head>
 <title>Paypay 全額バックのシミュレーション</title>
 <script src="paypay.js"></script>
@@ -7,7 +7,7 @@
 <body>
 <table>
 <tr><td>全額バック発生確率</td><td><input type="radio" name="pr" id="normal" value="0.025" checked="checked" onclick="prepareCalc();" onfocus="prepareCalc();">一般ユーザー(1/40)
-     <input  onclick="prepareCalc();" onfocus="prepareCalc();" type="radio" name="pr" value="0.05" id="yahoo">Yahooプレミアム会員
+     <input  onclick="prepareCalc();" onfocus="prepareCalc();" type="radio" name="pr" value="0.05" id="yahoo">Yahooプレミアム会員(1/20)
       <input type="radio" name="pr" value="0.1" id="softbank"  onclick="prepareCalc();" onfocus="prepareCalc();">ソフトバンク/ワイモバイルユーザー(1/10)</td></tr>
 <tr><td>購入する回数</td><td><input type="number" id="num" onchange="prepareCalc();"></td></tr>
 <tr><td colspan="2"><input type="button" value="計算" onclick="prepareCalc();"></td></tr>
